@@ -1,0 +1,273 @@
+:root {
+  --paper: #fffdf8;
+  --paper-soft: #f5eee3;
+  --ink: #221713;
+  --muted: #6d5a50;
+  --line: rgba(51, 30, 23, 0.12);
+  --accent: #a64d31;
+  --accent-deep: #6c2818;
+  --accent-soft: #f1ddcf;
+  --gold: #bb9461;
+  --shadow: 0 28px 80px rgba(63, 35, 27, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(166, 77, 49, 0.12), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(187, 148, 97, 0.12), transparent 18%),
+    linear-gradient(180deg, #f8f2eb 0%, #efe3d6 100%);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.ebook-shell {
+  width: min(920px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+  display: grid;
+  gap: 18px;
+}
+
+.ebook-cover,
+.ebook-page {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.ebook-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 44px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(241, 221, 207, 0.9), transparent 28%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(245, 238, 227, 0.98));
+}
+
+.ebook-cover::after {
+  content: "";
+  position: absolute;
+  right: -56px;
+  bottom: -72px;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(166, 77, 49, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+.cover-band,
+.cover-meta span,
+.section-kicker,
+.cover-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cover-band {
+  color: #fff8f3;
+  background: linear-gradient(180deg, #a64d31, #6c2818);
+}
+
+.cover-kicker,
+.section-kicker {
+  color: var(--accent-deep);
+  background: rgba(166, 77, 49, 0.08);
+  border: 1px solid rgba(108, 40, 24, 0.08);
+}
+
+.cover-kicker {
+  margin: 18px 0 14px;
+}
+
+.ebook-cover h1,
+.ebook-page h2 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.03em;
+}
+
+.ebook-cover h1 {
+  max-width: 10ch;
+  font-size: clamp(2.7rem, 5.8vw, 4.6rem);
+  line-height: 0.98;
+}
+
+.cover-subtitle,
+.ebook-page p,
+.ebook-list li {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.cover-subtitle {
+  max-width: 50ch;
+  margin: 18px 0 0;
+  font-size: 1.02rem;
+}
+
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.cover-meta span {
+  color: var(--accent-deep);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(108, 40, 24, 0.08);
+  letter-spacing: 0.08em;
+}
+
+.cover-note {
+  max-width: 48ch;
+  margin: 22px 0 0;
+  color: var(--accent-deep);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.ebook-page {
+  padding: 34px 34px 38px;
+  border-radius: 28px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.section-head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ebook-page h2 {
+  max-width: 15ch;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.02;
+}
+
+.ebook-page p {
+  max-width: 68ch;
+  margin: 0 0 14px;
+}
+
+.ebook-page p:last-child {
+  margin-bottom: 0;
+}
+
+.ebook-list {
+  max-width: 68ch;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.ebook-list li {
+  margin-bottom: 12px;
+}
+
+.ordered li::marker {
+  color: var(--accent-deep);
+  font-weight: 800;
+}
+
+.action-card,
+.highlight-box,
+.closing-box {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 40, 24, 0.08);
+}
+
+.action-card {
+  background: linear-gradient(180deg, rgba(241, 221, 207, 0.36), rgba(255, 255, 255, 0.6));
+}
+
+.highlight-box {
+  background: linear-gradient(180deg, rgba(187, 148, 97, 0.18), rgba(255, 255, 255, 0.58));
+}
+
+.closing-box {
+  background: linear-gradient(180deg, rgba(166, 77, 49, 0.12), rgba(255, 255, 255, 0.6));
+}
+
+.action-card strong,
+.highlight-box strong,
+.closing-box h3 {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.closing-box h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.utility-page {
+  background:
+    radial-gradient(circle at top right, rgba(187, 148, 97, 0.12), transparent 26%),
+    var(--paper);
+}
+
+@media (max-width: 720px) {
+  .ebook-shell {
+    width: min(100% - 16px, 920px);
+    padding: 16px 0 36px;
+  }
+
+  .ebook-cover,
+  .ebook-page {
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+
+  .ebook-cover h1,
+  .ebook-page h2 {
+    max-width: none;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .ebook-shell {
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
+
+  .ebook-cover,
+  .ebook-page {
+    box-shadow: none;
+    border: 1px solid #d8d0c8;
+    border-radius: 0;
+  }
+
+  .ebook-cover {
+    min-height: 100vh;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .ebook-cover::after {
+    display: none;
+  }
+}
