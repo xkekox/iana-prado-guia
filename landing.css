@@ -36,10 +36,8 @@ body {
 .problem,
 .deliverables,
 .chapters,
-.quote,
 .offer,
-.panel,
-.stats article {
+.panel {
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
 }
@@ -190,34 +188,9 @@ h1 {
   line-height: 1.55;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.stats article {
-  padding: 18px;
-  border-radius: 22px;
-  background: rgba(255, 250, 245, 0.8);
-}
-
-.stats strong {
-  display: block;
-  font-size: 1rem;
-}
-
-.stats span {
-  display: block;
-  margin-top: 6px;
-  color: var(--muted);
-}
-
 .problem,
 .deliverables,
 .chapters,
-.quote,
 .offer {
   margin-top: 18px;
   padding: 28px;
@@ -303,17 +276,6 @@ h1 {
   color: rgba(255, 246, 239, 0.84);
 }
 
-.quote {
-  background: linear-gradient(180deg, #2c1f1a, #1f1411);
-}
-
-blockquote {
-  max-width: 28ch;
-  color: #fff6ef;
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  line-height: 1.08;
-}
-
 .offer {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -336,6 +298,13 @@ blockquote {
   margin-bottom: 4px;
 }
 
+.offer-alert {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(164, 78, 51, 0.08);
+  border: 1px solid rgba(122, 47, 28, 0.08);
+}
+
 @media (max-width: 980px) {
   .hero,
   .offer,
@@ -347,10 +316,6 @@ blockquote {
   .deliverables-grid,
   .chapters-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -364,7 +329,6 @@ blockquote {
   .problem,
   .deliverables,
   .chapters,
-  .quote,
   .offer,
   .panel {
     padding: 22px;
@@ -379,8 +343,7 @@ blockquote {
   h1,
   .hero-card h2,
   .section-head h2,
-  .offer h2,
-  blockquote {
+  .offer h2 {
     max-width: none;
   }
 
