@@ -142,6 +142,19 @@ body {
   line-height: 1.6;
 }
 
+.preview-pill {
+  display: inline-flex;
+  margin: 18px 0 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(166, 77, 49, 0.1);
+  color: var(--accent-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .ebook-page {
   padding: 34px 34px 38px;
   border-radius: 28px;
@@ -219,6 +232,51 @@ body {
   font-size: 1.35rem;
 }
 
+.preview-lock {
+  background:
+    radial-gradient(circle at top right, rgba(166, 77, 49, 0.1), transparent 26%),
+    var(--paper);
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.preview-item {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(241, 221, 207, 0.34), rgba(255, 255, 255, 0.72));
+  border: 1px solid rgba(108, 40, 24, 0.08);
+}
+
+.preview-item strong {
+  color: var(--ink);
+}
+
+.preview-item span {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.preview-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  margin-top: 14px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #a64d31, #6c2818);
+  color: #fff8f3;
+  text-decoration: none;
+  font-weight: 800;
+}
+
 .utility-page {
   background:
     radial-gradient(circle at top right, rgba(187, 148, 97, 0.12), transparent 26%),
@@ -240,6 +298,10 @@ body {
   .ebook-cover h1,
   .ebook-page h2 {
     max-width: none;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
   }
 }
 
